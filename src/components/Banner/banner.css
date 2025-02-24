@@ -1,0 +1,83 @@
+.banner {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+}
+
+.imgbox {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+}
+
+.bannerimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Adds a slight overlay to make text readable */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cardbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+.card {
+    width: 400px;
+    height: 250px;
+    background-color: #F4D793;
+    border: 2px solid #010000;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.inner-card {
+    background-color: #FFF6DA;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+.availability_button{
+  width: 50px;
+  height: 30px;
+}
+.availability_btn{
+   height: 30px; 
+   border-radius: 5px;
+   background-color: #4CAF50;
+   color: white;
+   cursor: pointer;
+   font-size: 16px;
+   font-weight: bold;
+   border: none;
+  
+}
+.card_bottom{
+   
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 160px;
+}
+
