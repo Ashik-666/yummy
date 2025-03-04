@@ -1,83 +1,158 @@
-.banner {
-    width: 100%;
-    height: 120vh;
+/* Restaurant Banner Styles */
+.restaurant-banner {
     position: relative;
-}
-
-.imgbox {
     width: 100%;
-    height: 80vh;
-    position: relative;
-}
-
-.bannerimg {
+    height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5); /* Adds a slight overlay to make text readable */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.cardbox {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px;
-    width: 100%;
-    background-color: #f4f4f4;
-}
-
-.card {
-    width: 400px;
-    height: 250px;
-    background-color: #F4D793;
-    border: 2px solid #010000;
-    border-radius: 10px;
-    padding: 15px;
-    overflow: hidden;
-    flex-shrink: 0;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
-}
-
-.inner-card {
-    background-color: #FFF6DA;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
-}
-.availability_button{
-  width: 50px;
-  height: 30px;
-}
-.availability_btn{
-   height: 30px; 
-   border-radius: 5px;
-   background-color: #4CAF50;
-   color: white;
-   cursor: pointer;
-   font-size: 16px;
-   font-weight: bold;
-   border: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+  }
   
-}
-.card_bottom{
-   
-    height: 80px;
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .banner-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  
+  .banner-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .info-item {
     display: flex;
     align-items: center;
-    gap: 160px;
-}
-
+    gap: 15px;
+  }
+  
+  .info-item i {
+    font-size: 24px;
+    /* If using actual icons, keep this. Otherwise, replace with icon solution */
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+  
+  .icon-clock::before {
+    content: "🕒";
+  }
+  
+  .icon-location::before {
+    content: "📍";
+  }
+  
+  .icon-phone::before {
+    content: "📞";
+  }
+  
+  .info-label {
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+  }
+  
+  .info-item p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  .reservation-btn {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+  }
+  
+  .reservation-btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+  }
+  
+  .reservation-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .restaurant-banner {
+      height: 600px;
+    }
+    
+    .banner-content h1 {
+      font-size: 3rem;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+    }
+    
+    .banner-info {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .info-item {
+      width: 100%;
+      max-width: 300px;
+      justify-content: flex-start;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .reservation-btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }

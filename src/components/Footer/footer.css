@@ -1,77 +1,204 @@
-.footer {
-    background-color:#3E3E3E;
-    color: #fff;
-    padding: 40px 20px;
+/* Restaurant Footer Styles */
+.restaurant-footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 60px 20px 20px;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-logo-section p {
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: #ddd;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #e63946;
+  transform: translateY(-3px);
+}
+
+
+.iconn{
+  font-size: 38px;
+   color: white;
+}
+
+.footer-sections {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #e63946;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  color: #ccc;
+}
+
+.footer-section ul li i {
+  margin-right: 10px;
+  min-width: 16px;
+}
+
+.footer-section ul li span {
+  font-weight: 600;
+  margin-right: 10px;
+  color: white;
+}
+
+.quick-links li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.quick-links li a:hover {
+  color: #e63946;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #999;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #e63946;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-logo-section {
     text-align: center;
   }
   
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 15px;
-  }
-  
-  .footer-logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f4b400;
-  }
-  
-  .footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #f4b400;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
+    text-align: center;
   }
   
   .footer-section ul li {
-    margin: 8px 0;
-  }
-  
-  .footer-section ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-section ul li a:hover {
-    color: #f4b400;
-  }
-  
-  .social-icons {
-    display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-  }
-  
-  .social-icons a {
-    color: #ccc;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #f4b400;
   }
   
   .footer-bottom {
-    margin-top: 20px;
-    border-top: 1px solid #444;
-    padding-top: 10px;
-    font-size: 14px;
-    color: #aaa;
+    flex-direction: column;
+    text-align: center;
   }
   
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-sections {
+    flex-direction: column;
+  }
+}

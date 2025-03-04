@@ -1,16 +1,15 @@
 import React from 'react'
-import Header from './components/Header/Header'
-import Banner from './components/Banner/Banner'
-import Footer from './components/Footer/Footer'
+import {Routes,Route} from "react-router-dom"
+import Home from './Pages/Home'
+import Card from './Pages/Card'
 function App() {
   return (
-   <div>
-    <Header/>
-    <Banner/>
-    <Footer/>
-   </div>
-
-  
+    <div>
+      <Routes>
+        <Route path = "/home" element = {<Home/>} />
+        <Route path = "/restaurant" element = {<Card/>} />
+      </Routes>
+    </div>
   )
 }
 

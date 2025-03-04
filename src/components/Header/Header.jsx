@@ -1,18 +1,52 @@
-import React from 'react'
-import './header.css'
+import React, { useState, useEffect } from 'react';
+import './header.css';
+import { Link } from "react-router-dom";
+
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <div className='nav'>
-        <h2>yummy</h2>
-        <div className="nav_opt">
-            <h3>Home</h3>
-            <h3>My Bookings</h3>
-            <h3>Restaurant</h3>
-            <h3>Shop Login</h3>
-            <h3>User Login</h3>
+    <nav className={`restaurant-navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container">
+        <div className="navbar-logo">
+          <h2>Yummy</h2>
         </div>
-    </div>
-  )
+        
+        <div className="navbar-toggle" onClick={toggleMobileMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <ul className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
+          <li><a href="/home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#bookings">My Bookings</a></li>
+          <li><a href="/restaurant">Restaurants</a></li>
+          <li><a href="#shop-login">Shop Login</a></li>
+          <li><a href="#user-login" className="nav-login-btn">User Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
 
-export default Header
+export default Header;
